@@ -40,13 +40,6 @@ class Image extends Component {
                 backgroundPosition: 'center center'
             }
         }
-        if (this.props.item.isSelected)
-            return Object.assign({
-                width: this.props.item.vwidth -32,
-                height: this.props.height -32,
-                margin: 16,
-                overflow: "hidden",
-            }, nanoBase64Backgorund);
         return Object.assign({
             width: this.props.item.vwidth,
             height: this.props.height,
@@ -81,33 +74,6 @@ class Image extends Component {
             case 7:
                 rotationTransformValue = "rotate(90deg) rotateY(180deg)";
                 break;
-        }
-        if (this.props.item.isSelected){
-            var ratio = (this.props.item.scaletwidth / this.props.height);
-            var height = 0;
-            var width = 0;
-            var viewportHeight = (this.props.height - 32);
-            var viewportWidth = (this.props.item.vwidth -32);
-
-            if(this.props.item.scaletwidth > this.props.height){
-                width = this.props.item.scaletwidth -32;
-                height = Math.floor(width / ratio);
-            }
-            else {
-                height = this.props.height -32;
-                width = Math.floor(height * ratio);
-            }
-
-            var marginTop = -Math.abs(Math.floor((viewportHeight - height) / 2));
-            var marginLeft = -Math.abs(Math.floor((viewportWidth - width) / 2));
-            return {
-                cursor: 'pointer',
-                width: width,
-                height: height,
-                marginLeft: marginLeft,
-                marginTop: marginTop,
-                transform: rotationTransformValue
-            };
         }
         return {
             cursor: 'pointer',
@@ -192,7 +158,9 @@ class Image extends Component {
                 opacity: 1,
                 position: "absolute",
                 height: "36px",
-                width: "100%"}}>
+                width: "36px",
+                bottom: "20px",
+                right: "0px"}}>
                 {this.renderCheckButton()}
                 </div>
 
@@ -217,14 +185,18 @@ class Image extends Component {
             key={"tile-overlay-"+this.props.index}
             style={{
                 pointerEvents: "none",
-                opacity: 1,
+                opacity: .5,
                 position: "absolute",
                 height: "100%",
                 width: "100%",
-                background: (this.state.hover
-                             && !this.props.item.isSelected
-                             && this.props.isSelectable) ?
-                    'linear-gradient(to bottom,rgba(0,0,0,0.26),transparent 56px,transparent)' : 'none'}}>
+                display:"flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: 600,
+                fontSize: '50px',
+                color: "#fff",
+                background: 'linear-gradient(to bottom,rgba(0,0,0,0.30),transparent 56px,transparent)'}}>
+                    {this.props.item.count}
                 </div>
 
                 <div className="ReactGridGallery_tile-viewport"
@@ -268,7 +240,8 @@ Image.propTypes = {
     thumbnailStyle: PropTypes.func,
     tagStyle: PropTypes.object,
     customOverlay: PropTypes.element,
-    thumbnailImageComponent: PropTypes.func
+    thumbnailImageComponent: PropTypes.func,
+    count: PropTypes.number,
 };
 
 Image.defaultProps = {

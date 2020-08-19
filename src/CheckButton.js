@@ -26,7 +26,7 @@ class CheckButton extends Component {
         if (this.props.isSelected ||
             (this.props.isSelectable && this.props.parentHover))
             return 'visible';
-        return 'hidden';
+        return 'visible';
     }
 
     render () {
@@ -53,7 +53,7 @@ class CheckButton extends Component {
             }
             onMouseOver={(e) => this.setState({hover: true})}
             onMouseOut={(e) => this.setState({hover: false})}>
-                <FaThumbsUp />
+                <FaThumbsUp color={this.props.isSelected ? "#01999b" : "#fff"} />
                 </div>
         )
     }
