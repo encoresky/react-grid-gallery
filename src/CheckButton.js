@@ -23,10 +23,9 @@ class CheckButton extends Component {
     }
 
     visibility () {
-        if (this.props.isSelected ||
-            (this.props.isSelectable && this.props.parentHover))
+        if (this.props.isSelected || this.props.isSelectable)
             return 'visible';
-        return 'visible';
+        return 'hidden';
     }
 
     render () {
@@ -46,7 +45,8 @@ class CheckButton extends Component {
                 border: 'none',
                 padding: '6px',
                 cursor: 'pointer',
-                pointerEvents: 'visible'
+                pointerEvents: 'visible',
+                fontSize: "18px",
             }}
             onClick={this.props.onClick ?
                      (e) => this.props.onClick(this.props.index, e) : null

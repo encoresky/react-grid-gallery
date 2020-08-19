@@ -297,7 +297,7 @@ Demo0.defaultProps = {
             thumbnailWidth: 320,
             thumbnailHeight: 213,
             caption: "Ropeman - Thailand (Tom Eversley - isorepublic.com)",
-            count: 123
+            count: 1234,
         },
         {
             src: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_b.jpg",
@@ -305,7 +305,7 @@ Demo0.defaultProps = {
             thumbnailWidth: 320,
             thumbnailHeight: 213,
             caption: "Time to Think (Tom Eversley - isorepublic.com)",
-            count: 123
+            count: 1235,
         },
         {
             src: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_b.jpg",
@@ -314,7 +314,7 @@ Demo0.defaultProps = {
             thumbnailHeight: 179,
             tags: [{value: "Nature", title: "Nature"}, {value: "Fauna", title: "Fauna"}],
             caption: "Untitled (Jan Vasek - jeshoots.com)",
-            count: 123
+            count: 1236,
         },
         {
             src: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_b.jpg",
