@@ -185,6 +185,7 @@ class Image extends Component {
             key={"tile-overlay-"+this.props.index}
             style={{
                 pointerEvents: "none",
+                opacity: .7,
                 position: "absolute",
                 height: "100%",
                 width: "100%",
