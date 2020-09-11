@@ -196,7 +196,9 @@ class Image extends Component {
                 fontSize: '50px',
                 color: "#fff",
                 background: 'linear-gradient(to bottom,rgba(0,0,0,0.30),transparent 56px,transparent)'}}>
+                    <span style={{background: 'rgba(0, 0, 0, .8)', lineHeight:1, padding: '5px'}}>
                     {this.props.item.count}
+                    </span>
                 </div>
 
                 <div className="ReactGridGallery_tile-viewport"
